@@ -1,0 +1,78 @@
+.navbar {
+	width: 100%;
+	height: 60px;
+	background-color: var(--secondary-bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+	border-bottom: 1px solid var(--border-color);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.leftSection,
+.rightSection {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.iconButton,
+.textButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	border-radius: 4px;
+}
+
+.iconButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	border-radius: 4px;
+	color: var(--text-secondary);
+	font-size: 20px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.iconButton:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--text-primary);
+}
+
+.iconButton.active {
+	color: var(--accent-red);
+}
+
+.textButton {
+	color: var(--text-secondary);
+	font-size: 16px;
+	font-weight: 600;
+	padding: 8px 16px;
+	border-radius: 4px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.textButton:hover {
+	color: var(--text-primary);
+}
+
+.textButton.active {
+	color: var(--text-primary);
+	background-color: var(--accent-red);
+}
+
+.textButton.active:hover {
+	background-color: var(--accent-red-hover);
+}

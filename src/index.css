@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+
+:root {
+	--primary-bg: #1a1a1a;
+	--secondary-bg: #2b2b2b;
+	--card-bg: #202020;
+	--text-primary: #f0f0f0;
+	--text-secondary: #a0a0a0;
+	--accent-red: #e50914;
+	--accent-red-hover: #f40612;
+	--border-color: #333;
+	--shimmer-bg: #3a3a3a;
+	--shimmer-highlight: #4a4a4a;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--primary-bg);
+	color: var(--text-primary);
+	overflow-y: scroll;
+}
+
+/* Стилизация скроллбара в стиле Windows */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondary-bg);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+}
