@@ -1,31 +1,68 @@
-// src/api/animeService.ts
 import axios from 'axios';
 import type { IApiResponse } from '../types/anime';
-
-const API_BASE_URL = 'https://api.anixart.tv/filter';
+import type { IChannelApiResponse, IUserSearchApiResponse } from '../types/user';
 
 interface FetchParams {
-  page: number;
-  status?: number;
+	page: number;
+	apiUrl: string;
+	status?: number;
 }
 
-// Переименуем функцию для большей универсальности
-export const fetchAnime = async ({ page, status }: FetchParams): Promise<IApiResponse['content']> => {
-  try {
-    // Формируем URL с параметрами
-    const url = new URL(`${API_BASE_URL}/${page}`);
-    if (status !== undefined) {
-      url.searchParams.append('status', status.toString());
-    }
-
-    const response = await axios.get<IApiResponse>(url.toString());
-
-    if (response.data && response.data.code === 0) {
-      return response.data.content;
-    }
-    return [];
-  } catch (error) {
-    console.error("Error fetching anime data:", error);
-    return [];
-  }
+export const fetchAnime = async ({ page, apiUrl, status }: FetchParams): Promise<IApiResponse['content']> => {
+	const url = new URL(`${apiUrl}/filter/${page}`);
+	if (status !== undefined) {
+		url.searchParams.append('status', status.toString());
+	}
+	const response = await axios.get<IApiResponse>(url.toString());
+	if (response.data && response.data.code === 0) {
+		return response.data.content;
+	}
+	return [];
 };
+
+interface SearchParams {
+	page: number;
+	apiUrl: string;
+	query: string;
+}
+
+export const searchAnimeByQuery = async ({ page, apiUrl, query }: SearchParams): Promise<IApiResponse['content']> => {
+	const url = `${apiUrl}/search/releases/${page}`;
+	const payload = {
+		query,
+		searchBy: 0,
+	};
+
+	const response = await axios.post<IApiResponse>(url, payload);
+
+	if (response.data && response.data.code === 0) {
+		return response.data.content;
+	}
+	return [];
+}
+
+export const searchUsersByQuery = async ({ page, apiUrl, query }: SearchParams): Promise<IUserSearchApiResponse['content']> => {
+	const url = `${apiUrl}/search/profiles/${page}`;
+	const payload = {
+		query,
+		searchBy: 0,
+	};
+
+	const response = await axios.post<IUserSearchApiResponse>(url, payload);
+
+	if (response.data && response.data.code === 0) {
+		return response.data.content;
+	}
+	return [];
+}
+
+export const fetchUserChannelCover = async (profileId: number, apiUrl: string): Promise<string | null> => {
+	const url = `${apiUrl}/channel/blog/${profileId}`;
+	const response = await axios.get<IChannelApiResponse>(url);
+
+	if (response.data && response.data.code === 0 && response.data.channel?.cover) {
+		return response.data.channel.cover;
+	}
+
+	return null;
+}

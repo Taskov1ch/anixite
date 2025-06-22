@@ -9,6 +9,9 @@ import ExplorePage from './pages/ExplorePage/ExplorePage';
 import BookmarksPage from './pages/BookmarksPage/BookmarksPage';
 import NewsPage from './pages/NewsPage/NewsPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import SettingsPage from './pages/SettingsPage/SettingsPage';
+import SearchPage from './pages/SearchPage/SearchPage';
+import UserSearchPage from './pages/UserSearchPage/UserSearchPage';
 
 const DesktopLayout = () => {
 	const [pageSections, setPageSections] = useState<React.ReactNode | null>(null);
@@ -28,6 +31,8 @@ function App() {
 		return <MobileBlocker />;
 	}
 
+
+
 	return (
 		<Router>
 			<Routes>
@@ -37,6 +42,9 @@ function App() {
 					<Route path="bookmarks" element={<BookmarksPage />} />
 					<Route path="news" element={<NewsPage />} />
 					<Route path="profile" element={<ProfilePage />} />
+					<Route path="settings" element={<SettingsPage />} />
+					<Route path="/search/anime" element={<SearchPage />} />
+					<Route path="/search/users" element={<UserSearchPage />} />
 				</Route>
 			</Routes>
 		</Router>

@@ -1,0 +1,67 @@
+.card {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: var(--secondary-bg);
+	padding: 12px;
+	border-radius: 8px;
+	transition: all 0.2s ease-in-out;
+	overflow: hidden;
+}
+
+.card:hover {
+	transform: scale(1.02);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card.hasCover {
+	background-size: cover;
+	background-position: center;
+}
+
+.card>* {
+	position: relative;
+	z-index: 2;
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 15px;
+	flex-shrink: 0;
+	border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.userInfo {
+	flex-grow: 1;
+	overflow: hidden;
+}
+
+.loginContainer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.login {
+	color: var(--text-primary);
+	font-weight: 600;
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.verifiedIcon {
+	color: var(--accent-red);
+	font-size: 14px;
+	flex-shrink: 0;
+}
+
+.badge {
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}

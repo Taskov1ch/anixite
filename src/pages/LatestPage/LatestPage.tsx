@@ -14,6 +14,10 @@ const LatestPage = () => {
 	const [activeSection, setActiveSection] = useState<string>(SECTIONS[0].key);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [activeSection]);
+
+	useEffect(() => {
 		const sectionsUI = (
 			<>
 				{SECTIONS.map((section) => (

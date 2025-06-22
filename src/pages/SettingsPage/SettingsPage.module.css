@@ -1,0 +1,55 @@
+.pageContainer {
+	padding: 20px 40px;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.section {
+	margin-top: 30px;
+	background-color: var(--secondary-bg);
+	border-radius: 8px;
+	padding: 20px;
+}
+
+.sectionTitle {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.settingItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+}
+
+.settingInfo {
+	margin-right: 20px;
+}
+
+.settingName {
+	font-size: 16px;
+	color: var(--text-primary);
+	margin-bottom: 4px;
+}
+
+.settingDesc {
+	font-size: 14px;
+	color: var(--text-secondary);
+}
+
+.settingControl {
+	flex-shrink: 0;
+}

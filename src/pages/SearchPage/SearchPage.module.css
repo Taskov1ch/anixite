@@ -1,0 +1,31 @@
+.pageContainer {
+	padding: 20px 40px;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
+.title span {
+	color: var(--accent-red);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+}
