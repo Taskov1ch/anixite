@@ -12,6 +12,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import UserSearchPage from './pages/UserSearchPage/UserSearchPage';
+import AnimePage from './pages/AnimePage/AnimePage';
 
 const DesktopLayout = () => {
 	const [pageSections, setPageSections] = useState<React.ReactNode | null>(null);
@@ -45,6 +46,7 @@ function App() {
 					<Route path="settings" element={<SettingsPage />} />
 					<Route path="/search/anime" element={<SearchPage />} />
 					<Route path="/search/users" element={<UserSearchPage />} />
+					<Route path="/anime/:id" element={<AnimePage />} />
 				</Route>
 			</Routes>
 		</Router>

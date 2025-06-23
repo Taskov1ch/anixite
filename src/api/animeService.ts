@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { IApiResponse } from '../types/anime';
+import type { IApiResponse, IReleaseApiResponse, IReleaseDetails } from '../types/anime';
 import type { IChannelApiResponse, IUserSearchApiResponse } from '../types/user';
 
 interface FetchParams {
@@ -66,3 +66,13 @@ export const fetchUserChannelCover = async (profileId: number, apiUrl: string): 
 
 	return null;
 }
+
+export const fetchReleaseById = async (id: number, apiUrl: string): Promise<IReleaseDetails | null> => {
+	const url = `${apiUrl}/release/${id}`;
+	const response = await axios.get<IReleaseApiResponse>(url);
+
+	if (response.data && response.data.code === 0) {
+		return response.data.release;
+	}
+	return null;
+};

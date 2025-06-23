@@ -70,3 +70,9 @@
 	font-size: 14px;
 	color: var(--text-secondary);
 }
+
+.linkWrapper {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
