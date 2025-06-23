@@ -1,0 +1,78 @@
+.carouselWrapper {
+	margin-top: 30px;
+}
+
+.carouselTitle {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: var(--text-primary);
+}
+
+.carouselContainer {
+	position: relative;
+}
+
+.scrollArea {
+	display: flex;
+	gap: 15px;
+	overflow-x: auto;
+	padding-bottom: 15px;
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondary-bg) var(--primary-bg);
+	scroll-snap-type: x mandatory;
+}
+
+.scrollArea::-webkit-scrollbar {
+	height: 8px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+	background: var(--primary-bg);
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+	background-color: var(--secondary-bg);
+	border-radius: 4px;
+}
+
+.screenshot {
+	height: 200px;
+	width: auto;
+	border-radius: 8px;
+	object-fit: cover;
+	scroll-snap-align: start;
+	transition: transform 0.2s ease-in-out;
+	flex-shrink: 0;
+}
+
+.navButton {
+	position: absolute;
+	top: calc(50% - 7.5px);
+	transform: translateY(-50%);
+	z-index: 10;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	background-color: rgba(43, 43, 43, 0.8);
+	color: white;
+	font-size: 18px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navButton:hover {
+	background-color: var(--accent-red);
+}
+
+.prev {
+	left: 10px;
+}
+
+.next {
+	right: 10px;
+}

@@ -1,0 +1,83 @@
+.card {
+	display: flex;
+	gap: 15px;
+	padding: 15px;
+	background-color: var(--secondary-bg);
+	border-radius: 8px;
+}
+
+.avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.mainContent {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.userInfo {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.login {
+	color: var(--text-primary);
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.badge {
+	width: 18px;
+	height: 18px;
+}
+
+.verifiedIcon {
+	color: var(--accent-red);
+	font-size: 14px;
+}
+
+.metaInfo {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--text-secondary);
+	font-size: 13px;
+}
+
+.editedIcon {
+	color: var(--text-secondary);
+}
+
+.message {
+	color: var(--text-primary);
+	line-height: 1.6;
+	font-size: 15px;
+	white-space: pre-wrap;
+}
+
+.footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.likes {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--text-secondary);
+	font-size: 14px;
+}

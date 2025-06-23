@@ -1,0 +1,15 @@
+.spoilerButton {
+	background-color: var(--secondary-bg);
+	border: 1px solid var(--border-color);
+	color: var(--text-secondary);
+	padding: 10px 15px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	font-weight: 600;
+}
+
+.spoilerButton:hover {
+	background-color: #3a3a3a;
+	color: var(--text-primary);
+}

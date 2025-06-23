@@ -1,113 +1,202 @@
-/* src/pages/AnimePage/AnimePage.module.css */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @keyframes posterEnter {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .pageContainer {
-  display: flex;
-  padding: 40px;
-  gap: 40px;
-  min-height: calc(100vh - 60px); /* 100% высоты минус навбар */
-  animation: fadeIn 0.5s ease-out;
+	padding: 20px 40px;
+	min-height: calc(100vh - 60px);
+	animation: fadeIn 0.5s ease-out;
+}
+
+.mainContent {
+	display: flex;
+	gap: 40px;
 }
 
 .leftPanel {
-  flex: 0 0 300px; /* Фиксированная ширина левой панели */
+	flex: 0 0 300px;
 }
 
 .poster {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: posterEnter 0.6s ease-out;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	animation: posterEnter 0.6s ease-out;
 }
 
 .posterPlaceholder {
-  height: 420px; /* Примерная высота постера */
-  background-color: var(--secondary-bg);
+	height: 420px;
+	background-color: var(--secondary-bg);
 }
 
 .rightPanel {
-  flex: 1;
+	flex: 1;
+	min-width: 0;
 }
 
 .animeInfo {
-  color: var(--text-primary);
+	color: var(--text-primary);
 }
 
 .title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 5px;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 5px;
 }
 
 .originalTitle {
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+	font-size: 16px;
+	color: var(--text-secondary);
+	margin-bottom: 20px;
 }
 
 .genres {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 25px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 25px;
 }
 
 .genreTag {
-  background-color: var(--secondary-bg);
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: 500;
+	background-color: var(--secondary-bg);
+	padding: 6px 12px;
+	border-radius: 15px;
+	font-size: 14px;
+	font-weight: 500;
 }
 
-.description {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  max-width: 80ch;
-  color: var(--text-secondary);
-}
 
 .details {
-  background-color: var(--secondary-bg);
-  padding: 20px;
-  border-radius: 8px;
+	background-color: var(--secondary-bg);
+	padding: 20px;
+	border-radius: 8px;
+	margin-top: 30px;
 }
 
 .details p {
-  margin-bottom: 10px;
-}
-.details p:last-child {
-  margin-bottom: 0;
+	margin-bottom: 10px;
 }
 
-/* Стили для Shimmer-загрузки */
+.details p:last-child {
+	margin-bottom: 0;
+}
+
 .loadingInfo .shimmerTitle {
-  height: 36px;
-  width: 70%;
-  background-color: var(--shimmer-bg);
-  border-radius: 6px;
-  margin-bottom: 20px;
+	height: 36px;
+	width: 70%;
+	background-color: var(--shimmer-bg);
+	border-radius: 6px;
+	margin-bottom: 20px;
 }
+
 .loadingInfo .shimmerText {
-  height: 20px;
-  width: 100%;
-  background-color: var(--shimmer-bg);
-  border-radius: 4px;
-  margin-bottom: 10px;
+	height: 20px;
+	width: 100%;
+	background-color: var(--shimmer-bg);
+	border-radius: 4px;
+	margin-bottom: 10px;
 }
+
 .loadingInfo .shimmerTextShort {
-  height: 20px;
-  width: 50%;
-  background-color: var(--shimmer-bg);
-  border-radius: 4px;
+	height: 20px;
+	width: 50%;
+	background-color: var(--shimmer-bg);
+	border-radius: 4px;
+}
+
+.posterDetails {
+	margin-top: 20px;
+	padding: 15px;
+	background-color: var(--secondary-bg);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.detailItem {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	color: var(--text-secondary);
+}
+
+.detailItem strong {
+	color: var(--text-primary);
+	font-weight: 500;
+	margin-left: 5px;
+}
+
+.detailIcon {
+	width: 16px;
+	margin-right: 10px;
+	color: var(--text-secondary);
+	text-align: center;
+}
+
+.description {
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 25px;
+	max-width: 80ch;
+	color: var(--text-secondary);
+}
+
+.noteBox {
+	display: flex;
+	gap: 15px;
+	background-color: rgba(229, 9, 20, 0.05);
+	border-left: 3px solid var(--accent-red);
+	padding: 15px 20px;
+	margin: 20px 0;
+	border-radius: 4px;
+	font-size: 15px;
+	line-height: 1.6;
+	color: var(--text-secondary);
+}
+
+.noteIcon {
+	color: var(--accent-red);
+	font-size: 18px;
+	margin-top: 3px;
+}
+
+.commentsSection {
+	margin-top: 40px;
+}
+
+.sectionTitle {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	color: var(--text-primary);
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.commentsList {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }

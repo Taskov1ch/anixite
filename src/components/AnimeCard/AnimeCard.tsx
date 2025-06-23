@@ -15,7 +15,7 @@ const AnimeCard = ({ anime }: AnimeCardProps) => {
 
 	const episodes = `${anime.episodes_released ?? '?'} / ${anime.episodes_total ?? '?'}`;
 	const grade = anime.grade > 0 ? anime.grade.toFixed(1) : null;
-	const details = `${episodes} • ${anime.year}`;
+	const details = `${episodes} • ${anime.year ?? "?"}`;
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
